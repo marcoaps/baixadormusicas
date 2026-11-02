@@ -105,9 +105,11 @@ export default function App() {
   };
 
   const handleDownload = (item: MusicItem) => {
-    // Busca e converte a faixa real diretamente via busca de áudio
-    const query = encodeURIComponent(`${item.title} ${item.artist}`);
-    const downloadProviderUrl = `https://cobalt.tools/#${encodeURIComponent(`https://www.youtube.com/results?search_query=${query}`)}`;
+  // Redireciona diretamente para a ferramenta com a busca da faixa pronta
+  const query = encodeURIComponent(`${item.title} ${item.artist}`);
+  const downloadProviderUrl = `https://spotifydown.com/`;
+  window.open(downloadProviderUrl, '_blank');
+};
     
     // Abre o serviço de download direto para extração do WAV/MP3 da faixa selecionada
     window.open(downloadProviderUrl, '_blank');
